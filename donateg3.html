@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>悅讀拾光學習陪伴協會｜線上捐款</title>
+<style>
+:root{--g:#2f6f4f;--red:#d93025}
+*{box-sizing:border-box}
+body{margin:0;background:#f4efe6;font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',Roboto,Arial,sans-serif;color:#2b2b2b;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 16px}
+.dp{display:flex;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.12);min-height:640px}
+.dp .left{width:440px;flex-shrink:0;position:relative}
+.dp .left h1{position:absolute;left:28px;top:28px;margin:0;font-size:30px;color:#7a4a00;font-weight:700;line-height:1.35}
+.dp .right{flex:1;padding:26px 36px 32px;display:flex;flex-direction:column;min-width:0}
+.steps{display:flex;align-items:center;gap:8px;font-size:13px;color:#9a9a9a;margin-bottom:18px;flex-wrap:wrap}
+.steps .on{color:var(--g);font-weight:700}.steps .ar{font-size:9px;color:#b5b5b5}
+.org{font-size:15px;color:#b8742a;font-weight:700;margin-bottom:6px}
+.intro{font-size:14px;line-height:1.65;color:#444;margin-bottom:16px}
+.lab{font-size:14px;font-weight:700;color:var(--g);margin-bottom:8px}
+.method{display:flex;margin-bottom:16px;border-radius:12px;overflow:hidden}
+.method div{flex:1;text-align:center;padding:12px;font-weight:700;font-size:15px;background:var(--g);color:#fff}
+.amounts{min-height:156px}
+.amt{height:68px;display:flex;align-items:center;border:2px solid #cfcfcf;border-radius:12px;padding:0 16px;background:#fff;margin-bottom:12px;cursor:pointer;transition:.12s}
+.amt .cur{font-weight:700;font-size:15px;color:#555;margin-right:10px}
+.amt .val{font-size:28px;font-weight:700;color:#222}
+.amt input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-size:28px;font-weight:700;color:#222;font-family:inherit;padding:0}
+.amt input::placeholder{font-size:17px;font-weight:400;color:#b5b5b5}
+.amt.hl{border-color:var(--g);background:#eef7f1;box-shadow:0 0 0 4px rgba(47,111,79,.15)}
+.amt.hl .cur{color:var(--g)}
+.amt:hover{border-color:#9bb8a8}
+.dp-err{color:var(--red);font-size:14px;min-height:20px;margin:-4px 0 6px}
+.dp-btn{margin-top:auto;background:var(--g);color:#fff;text-align:center;font-weight:700;font-size:17px;padding:14px;border-radius:12px;cursor:pointer;border:0;font-family:inherit;width:100%}
+.dp-btn:hover{filter:brightness(1.08)}
+.done{background:#fff;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,.12);padding:72px 24px;text-align:center;margin-top:60px}
+.done h1{margin:0;font-size:30px;color:var(--g)}
+@media(max-width:820px){
+ .wrap{padding:12px}
+ .dp{flex-direction:column;min-height:0}
+ .dp .left{width:100%;aspect-ratio:440/640}
+ .dp .left h1{font-size:clamp(20px,6vw,30px)}
+ .dp .right{padding:22px 18px 26px}
+ .amt .val,.amt input{font-size:24px}
+ .done{padding:56px 16px;margin-top:24px}.done h1{font-size:24px}
+}
+</style></head>
+<body><div class="wrap" id="app"></div>
+<template id="svgtpl"><svg viewBox="0 0 440 640" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd978"/><stop offset="1" stop-color="#fff1c7"/></linearGradient></defs>
+<rect width="440" height="640" fill="url(#sky)"/>
+<line x1="396.0" y1="165.0" x2="416.0" y2="165.0" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="389.8" y1="188.0" x2="407.2" y2="198.0" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="373.0" y1="204.8" x2="383.0" y2="222.2" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="350.0" y1="211.0" x2="350.0" y2="231.0" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="327.0" y1="204.8" x2="317.0" y2="222.2" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="310.2" y1="188.0" x2="292.8" y2="198.0" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="304.0" y1="165.0" x2="284.0" y2="165.0" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="310.2" y1="142.0" x2="292.8" y2="132.0" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="327.0" y1="125.2" x2="317.0" y2="107.8" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="350.0" y1="119.0" x2="350.0" y2="99.0" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="373.0" y1="125.2" x2="383.0" y2="107.8" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><line x1="389.8" y1="142.0" x2="407.2" y2="132.0" stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/><circle cx="350" cy="165" r="36" fill="#ffb627"/><circle cx="350" cy="165" r="28" fill="#ffc94d"/>
+<ellipse cx="70" cy="165" rx="40" ry="12" fill="#fff" opacity=".85"/><ellipse cx="90" cy="156" rx="24" ry="10" fill="#fff" opacity=".85"/>
+<ellipse cx="230" cy="130" rx="34" ry="10" fill="#fff" opacity=".8"/><ellipse cx="246" cy="122" rx="20" ry="9" fill="#fff" opacity=".8"/>
+<path d="M0 330 Q110 285 220 325 T440 312 V430 H0Z" fill="#9fd08a"/>
+<path d="M0 360 Q150 325 280 352 T440 346 V430 H0Z" fill="#7fbf6e"/>
+<rect y="392" width="440" height="40" fill="#6f6f78"/><rect y="390" width="440" height="5" fill="#a9a9b2"/>
+<g fill="#fff"><rect x="20" y="410" width="40" height="5" rx="2.5"/><rect x="110" y="410" width="40" height="5" rx="2.5"/><rect x="200" y="410" width="40" height="5" rx="2.5"/><rect x="290" y="410" width="40" height="5" rx="2.5"/><rect x="380" y="410" width="40" height="5" rx="2.5"/></g>
+<rect y="432" width="440" height="208" fill="#fde9ae"/>
+<g transform="translate(14,165) scale(0.6)">
+<rect x="60" y="110" width="330" height="240" rx="18" fill="#fff"/>
+<path d="M60 128 a18 18 0 0 1 18 -18 H372 a18 18 0 0 1 18 18 V150 H60Z" fill="#2f8f9d"/>
+<text x="225" y="138" font-size="22" font-weight="700" fill="#fff" text-anchor="middle" font-family="Noto Sans CJK TC">移動閱讀車</text>
+<path d="M390 170 H470 Q492 170 500 192 L520 250 Q526 262 526 276 V350 H390Z" fill="#f2b134"/>
+<path d="M410 186 H466 Q478 186 484 200 L498 244 H410Z" fill="#cfeaf2"/>
+<rect x="76" y="164" width="296" height="146" rx="8" fill="#fff6e0" stroke="#d9b36a" stroke-width="3"/>
+<line x1="76" y1="236" x2="372" y2="236" stroke="#d9b36a" stroke-width="4"/>
+<rect x="92" y="194" width="14" height="38" fill="#e8604c" rx="1.5"/><rect x="108" y="190" width="10" height="42" fill="#6aa84f" rx="1.5"/><rect x="120" y="184" width="12" height="48" fill="#6aa84f" rx="1.5"/><rect x="134" y="192" width="10" height="40" fill="#6aa84f" rx="1.5"/><rect x="146" y="198" width="12" height="34" fill="#6aa84f" rx="1.5"/><rect x="160" y="198" width="14" height="34" fill="#6aa84f" rx="1.5"/><rect x="176" y="190" width="14" height="42" fill="#3b8ea5" rx="1.5"/><rect x="192" y="180" width="10" height="52" fill="#f2b134" rx="1.5"/><rect x="204" y="198" width="10" height="34" fill="#e8604c" rx="1.5"/><rect x="216" y="181" width="10" height="51" fill="#6aa84f" rx="1.5"/><rect x="228" y="192" width="12" height="40" fill="#e8604c" rx="1.5"/><rect x="242" y="182" width="10" height="50" fill="#6aa84f" rx="1.5"/><rect x="254" y="183" width="14" height="49" fill="#3b8ea5" rx="1.5"/><rect x="270" y="187" width="10" height="45" fill="#3b8ea5" rx="1.5"/><rect x="282" y="184" width="12" height="48" fill="#e8604c" rx="1.5"/><rect x="296" y="185" width="14" height="47" fill="#e8604c" rx="1.5"/><rect x="312" y="193" width="14" height="39" fill="#f2b134" rx="1.5"/><rect x="328" y="195" width="14" height="37" fill="#f2b134" rx="1.5"/><rect x="344" y="182" width="12" height="50" fill="#8e6bbf" rx="1.5"/><rect x="92" y="267" width="10" height="35" fill="#e8604c" rx="1.5"/><rect x="104" y="257" width="10" height="45" fill="#f2b134" rx="1.5"/><rect x="116" y="260" width="14" height="42" fill="#3b8ea5" rx="1.5"/><rect x="132" y="267" width="14" height="35" fill="#3b8ea5" rx="1.5"/><rect x="148" y="255" width="14" height="47" fill="#6aa84f" rx="1.5"/><rect x="164" y="252" width="12" height="50" fill="#8e6bbf" rx="1.5"/><rect x="178" y="254" width="14" height="48" fill="#f2b134" rx="1.5"/><rect x="194" y="267" width="10" height="35" fill="#f2b134" rx="1.5"/><rect x="206" y="254" width="12" height="48" fill="#6aa84f" rx="1.5"/><rect x="220" y="255" width="14" height="47" fill="#3b8ea5" rx="1.5"/><rect x="236" y="251" width="10" height="51" fill="#3b8ea5" rx="1.5"/><rect x="248" y="261" width="10" height="41" fill="#3b8ea5" rx="1.5"/><rect x="260" y="258" width="10" height="44" fill="#3b8ea5" rx="1.5"/><rect x="272" y="252" width="14" height="50" fill="#f2b134" rx="1.5"/><rect x="288" y="252" width="14" height="50" fill="#8e6bbf" rx="1.5"/><rect x="304" y="263" width="12" height="39" fill="#6aa84f" rx="1.5"/><rect x="318" y="252" width="12" height="50" fill="#8e6bbf" rx="1.5"/><rect x="332" y="257" width="12" height="45" fill="#6aa84f" rx="1.5"/><rect x="346" y="263" width="12" height="39" fill="#6aa84f" rx="1.5"/>
+<circle cx="150" cy="350" r="34" fill="#2b2b33"/><circle cx="150" cy="350" r="15" fill="#c9c9d1"/>
+<circle cx="440" cy="350" r="34" fill="#2b2b33"/><circle cx="440" cy="350" r="15" fill="#c9c9d1"/>
+</g>
+<g transform="translate(22,452)">
+<rect width="192" height="165" rx="14" fill="#fff" stroke="#f0d9a0" stroke-width="2"/>
+<clipPath id="c1"><rect x="6" y="6" width="180" height="124" rx="10"/></clipPath>
+<g clip-path="url(#c1)">
+<rect x="6" y="6" width="180" height="124" fill="#fff6e0"/>
+<rect x="6" y="104" width="180" height="26" fill="#f2dfb5"/>
+<rect x="14" y="22" width="56" height="88" fill="#c98f4a"/><rect x="18" y="26" width="48" height="80" fill="#f6e3bd"/>
+<line x1="18" y1="52" x2="66" y2="52" stroke="#c98f4a" stroke-width="3"/><line x1="18" y1="79" x2="66" y2="79" stroke="#c98f4a" stroke-width="3"/>
+<rect x="20" y="33" width="7" height="17" fill="#8e6bbf" rx="1"/><rect x="28" y="34" width="6" height="16" fill="#8e6bbf" rx="1"/><rect x="35" y="29" width="7" height="21" fill="#8e6bbf" rx="1"/><rect x="43" y="35" width="7" height="15" fill="#e8604c" rx="1"/><rect x="51" y="29" width="6" height="21" fill="#8e6bbf" rx="1"/><rect x="58" y="33" width="5" height="17" fill="#6aa84f" rx="1"/><rect x="20" y="60" width="6" height="17" fill="#e8604c" rx="1"/><rect x="27" y="57" width="6" height="20" fill="#3b8ea5" rx="1"/><rect x="34" y="62" width="5" height="15" fill="#e8604c" rx="1"/><rect x="40" y="57" width="7" height="20" fill="#f2b134" rx="1"/><rect x="48" y="63" width="5" height="14" fill="#8e6bbf" rx="1"/><rect x="54" y="55" width="6" height="22" fill="#f2b134" rx="1"/><rect x="20" y="86" width="7" height="18" fill="#f2b134" rx="1"/><rect x="28" y="82" width="5" height="22" fill="#6aa84f" rx="1"/><rect x="34" y="87" width="7" height="17" fill="#e8604c" rx="1"/><rect x="42" y="88" width="5" height="16" fill="#f2b134" rx="1"/><rect x="48" y="83" width="5" height="21" fill="#6aa84f" rx="1"/><rect x="54" y="82" width="5" height="22" fill="#8e6bbf" rx="1"/>
+<ellipse cx="122" cy="116" rx="62" ry="11" fill="#3b8ea5" opacity=".35"/>
+<ellipse cx="104" cy="104" rx="28" ry="15" fill="#e8604c"/>
+<ellipse cx="104" cy="88" rx="13" ry="17" fill="#f2b134"/>
+<circle cx="104" cy="64" r="11" fill="#f5c9a0"/><path d="M93 62 Q104 48 115 62 Q110 56 104 56 Q97 56 93 62Z" fill="#5a3a22"/>
+<g transform="rotate(-8 104 84)"><rect x="91" y="78" width="26" height="15" rx="2" fill="#3b8ea5"/><line x1="104" y1="78" x2="104" y2="93" stroke="#fff" stroke-width="2"/></g>
+<line x1="152" y1="44" x2="152" y2="112" stroke="#777" stroke-width="3"/>
+<circle cx="152" cy="40" r="22" fill="#ffd978" opacity=".4"/>
+<polygon points="140,42 164,42 158,26 146,26" fill="#ffc94d"/>
+<rect x="170" y="94" width="12" height="14" rx="2" fill="#c9774a"/><ellipse cx="176" cy="88" rx="9" ry="10" fill="#6aa84f"/><ellipse cx="170" cy="82" rx="5" ry="7" fill="#7fbf6e"/>
+</g>
+<text x="96" y="153" font-size="16" font-weight="700" fill="#7a4a00" text-anchor="middle" font-family="Noto Sans CJK TC">閱讀角落</text>
+</g><g transform="translate(226,452)">
+<rect width="192" height="165" rx="14" fill="#fff" stroke="#f0d9a0" stroke-width="2"/>
+<clipPath id="c2"><rect x="6" y="6" width="180" height="124" rx="10"/></clipPath>
+<g clip-path="url(#c2)">
+<rect x="6" y="6" width="180" height="124" fill="#fff6e0"/>
+<rect x="6" y="104" width="180" height="26" fill="#f2dfb5"/>
+<rect x="70" y="14" width="52" height="34" rx="3" fill="#cfeaf2" stroke="#d9b36a" stroke-width="3"/><line x1="96" y1="14" x2="96" y2="48" stroke="#d9b36a" stroke-width="2"/>
+<rect x="30" y="80" width="134" height="8" rx="2" fill="#c98f4a"/>
+<rect x="38" y="88" width="5" height="24" fill="#a8733a"/><rect x="151" y="88" width="5" height="24" fill="#a8733a"/>
+<rect x="46" y="64" width="30" height="32" rx="8" fill="#2f8f9d"/>
+<circle cx="61" cy="52" r="12" fill="#f5c9a0"/><path d="M49 50 Q61 36 73 50 Q68 44 61 44 Q54 44 49 50Z" fill="#3a2a20"/>
+<rect x="118" y="72" width="26" height="24" rx="7" fill="#f2b134"/>
+<circle cx="131" cy="61" r="10" fill="#f5c9a0"/><path d="M121 59 Q131 47 141 59 Q136 53 131 53 Q126 53 121 59Z" fill="#5a3a22"/>
+<polygon points="84,80 96,76 96,80" fill="#fff"/>
+<polygon points="86,79 96,75 106,79 106,81 96,77 86,81" fill="#fff" stroke="#3b8ea5" stroke-width="1.5"/>
+<path d="M96 40 C86 30 90 24 96 30 C102 24 106 30 96 40Z" fill="#e8604c"/>
+</g>
+<text x="96" y="153" font-size="16" font-weight="700" fill="#7a4a00" text-anchor="middle" font-family="Noto Sans CJK TC">課輔陪伴</text>
+</g>
+</svg></template>
+<script>
+const CONFIG={
+  FIXED_GROUP:3,        // 1＝無預設，2＝預設 100，3＝預設 1,000；null 時改由網址 ?g=1/2/3 決定，都沒有則隨機分組
+  DEFAULTS:{1:null,2:100,3:1000},
+  ENDPOINT:""               // （選填）Google Apps Script 網址；填入後會把捐款頁面的操作紀錄送出
+};
+let group=CONFIG.FIXED_GROUP;
+if(!group){group=parseInt(new URLSearchParams(location.search).get('g'),10);
+  if(![1,2,3].includes(group))group=1+Math.floor(Math.random()*3)}
+const app=document.getElementById('app');
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+
+function render(){
+  const def=CONFIG.DEFAULTS[group];
+  const box=el('div','dp');
+  const left=el('div','left');left.appendChild(document.getElementById('svgtpl').content.cloneNode(true));
+  left.appendChild(el('h1',null,'讓每個孩子都有機會<br>好好學習'));
+  const right=el('div','right');
+  right.innerHTML='<div class="steps"><span class="on">填寫捐款金額</span><span class="ar">▶</span><span>填寫捐款人資料及收據</span><span class="ar">▶</span><span>確認填寫資訊</span><span class="ar">▶</span><span>金流資料</span></div>'+
+   '<div class="org">悅讀拾光學習陪伴協會</div>'+
+   '<div class="intro">悅讀拾光學習陪伴協會，是一個致力於陪伴弱勢家庭孩童學習的非營利組織。協會透過移動閱讀車、社區閱讀角落與課後輔導陪伴，為偏鄉與經濟弱勢的孩子提供學習資源與穩定的陪伴。我們期盼每個孩子都能在閱讀中找到自信與好奇心，不因家庭環境而錯失學習的機會。</div>'+
+   '<div class="lab">捐款方式</div><div class="method"><div>單筆捐款</div></div><div class="lab">捐款金額</div>';
+  const amounts=el('div','amounts');right.appendChild(amounts);
+  const err=el('div','dp-err');right.appendChild(err);
+  const next=el('button','dp-btn','下一步 &gt;&gt;');right.appendChild(next);
+  box.appendChild(left);box.appendChild(right);app.appendChild(box);
+
+  const t0=performance.now();const ev=[];
+  const log=(type,value)=>ev.push({t:Math.round(performance.now()-t0),type,value});
+  let sel=def?'default':'custom',focused=false,switches=0,optDef=null;
+  if(def){
+    optDef=el('div','amt','<span class="cur">NTD</span><span class="val">'+def.toLocaleString('en-US')+'</span>');
+    optDef.tabIndex=0;optDef.setAttribute('role','radio');amounts.appendChild(optDef);
+  }
+  const cus=el('div','amt');const inp=document.createElement('input');
+  inp.type='text';inp.inputMode='numeric';inp.placeholder='自行輸入捐款金額';inp.maxLength=9;inp.autocomplete='off';
+  const cur=el('span','cur','NTD');cus.appendChild(cur);cus.appendChild(inp);amounts.appendChild(cus);
+  function paint(){
+    if(optDef)optDef.classList.toggle('hl',sel==='default');
+    cus.classList.toggle('hl',sel==='custom'&&(def?true:(focused||inp.value!=='')));
+    cur.style.display=(focused||inp.value!=='')?'':'none';
+  }
+  function choose(s){if(s!==sel){switches++;log('switch_to_'+s,null)}sel=s;err.textContent='';paint()}
+  if(optDef){
+    optDef.onclick=()=>{choose('default');log('click_default',def)};
+    optDef.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();optDef.click()}};
+  }
+  cus.onclick=()=>inp.focus();
+  inp.onfocus=()=>{focused=true;choose('custom');log('focus_custom',inp.value);paint()};
+  inp.onblur=()=>{focused=false;paint()};
+  inp.oninput=()=>{inp.value=inp.value.replace(/[^\d]/g,'');err.textContent='';log('input',inp.value);paint()};
+  paint();
+  next.onclick=()=>{
+    const amt=sel==='default'?def:(inp.value===''?null:parseInt(inp.value,10));
+    if(!amt||amt<1){if(sel==='custom'&&document.activeElement!==inp)inp.focus();err.textContent='請選擇或輸入捐款金額';return}
+    const rec={group,default_amount:def??'',final_amount:amt,final_source:sel,
+      kept_default:def?(sel==='default'):'',changed_from_default:def?(sel==='custom'):'',
+      n_switches:switches,time_on_page_ms:Math.round(performance.now()-t0),events:JSON.stringify(ev),
+      submittedAt:new Date().toISOString(),ua:navigator.userAgent};
+    window.__record=rec;
+    if(CONFIG.ENDPOINT){try{fetch(CONFIG.ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(rec)})}catch(e){}}
+    app.innerHTML='';window.scrollTo(0,0);
+    app.appendChild(el('div','done','<h1>請回到原問卷繼續作答</h1>'));
+  };
+}
+render();
+</script></body></html>
